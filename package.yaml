@@ -1,0 +1,40 @@
+name:                katip-monad-logger
+version:             0.1.0.0
+github:              "parsonsmatt/katip-monad-logger"
+license:             BSD3
+author:              "Matt Parsons"
+maintainer:          "parsonsmatt@gmail.com"
+copyright:           "Matt Parsons"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+synopsis:            Integrate katip and monad-logger
+category:            Logging
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/parsonsmatt/katip-monad-logger#readme>
+
+dependencies:
+- base >= 4.12 && < 5
+- katip
+- monad-logger
+
+library:
+  source-dirs: src
+  ghc-options: -Wall
+
+tests:
+  spec:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - katip-monad-logger
